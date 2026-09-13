@@ -1,16 +1,167 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kgomotso High School - Home</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
 
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <!-- =========================
+       SEO TITLE
+       ========================= -->
+  <title>
+    Kgomotso High School | Official School Website
+  </title>
+
+  <!-- =========================
+       SEO DESCRIPTION
+       ========================= -->
+  <meta
+    name="description"
+    content="Official website of Kgomotso High School. Find school information, announcements, registration, library resources, virtual learning, quizzes, gallery and more."
+  />
+
+  <!-- =========================
+       SEARCH ENGINE INSTRUCTIONS
+       ========================= -->
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <!-- =========================
+       CANONICAL URL
+       ========================= -->
+  <link
+    rel="canonical"
+    href="https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/"
+  />
+
+  <!-- =========================
+       AUTHOR
+       ========================= -->
+  <meta
+    name="author"
+    content="Kgomotso High School"
+  />
+
+  <!-- =========================
+       THEME COLOR
+       ========================= -->
+  <meta
+    name="theme-color"
+    content="#ffc107"
+  />
+
+  <!-- =========================
+       OPEN GRAPH / FACEBOOK
+       ========================= -->
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:title"
+    content="Kgomotso High School | Official School Website"
+  />
+
+  <meta
+    property="og:description"
+    content="Official website of Kgomotso High School. Explore school information, registration, library resources, virtual learning, quizzes, announcements and more."
+  />
+
+  <meta
+    property="og:url"
+    content="https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/"
+  />
+
+  <meta
+    property="og:site_name"
+    content="Kgomotso High School"
+  />
+
+  <meta
+    property="og:image"
+    content="https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/kss%20logo.png"
+  />
+
+  <!-- =========================
+       TWITTER / X
+       ========================= -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Kgomotso High School | Official School Website"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Official website of Kgomotso High School."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/kss%20logo.png"
+  />
+
+  <!-- =========================
+       FAVICON
+       ========================= -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="kss logo.png"
+  />
+
+  <!-- =========================
+       BOOTSTRAP
+       ========================= -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- =========================
+       FONT AWESOME
+       ========================= -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- =========================
+       STRUCTURED DATA
+       Helps search engines
+       understand the school.
+       ========================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Kgomotso High School",
+    "url": "https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/",
+    "logo": "https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/kss%20logo.png",
+    "description": "Official website of Kgomotso High School.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2901 Mosegedi Street",
+      "addressLocality": "Pampierstad",
+      "postalCode": "8566",
+      "addressRegion": "Northern Cape",
+      "addressCountry": "ZA"
+    },
+    "telephone": "(083) 378 9086",
+    "email": "kgomotsoss@ncdoe.school.za"
+  }
+  </script>
 
   <style>
     body {
@@ -102,7 +253,6 @@
       color: white;
     }
 
-    /* Content Manager styling */
     .content-section {
       margin-top: 40px;
     }
@@ -113,7 +263,7 @@
       padding: 15px;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
     }
 
     .content-card h5 {
@@ -128,14 +278,16 @@
 
 <body>
 
-  <!-- Top Header -->
+  <!-- =========================
+       HEADER
+       ========================= -->
   <header class="py-4 text-center">
 
     <div class="d-flex justify-content-center align-items-center">
 
       <img
         src="kss logo.png"
-        alt="KHS Logo"
+        alt="Kgomotso High School official logo"
         style="max-width: 120px; height: auto; margin-right: 15px"
       />
 
@@ -152,13 +304,20 @@
   </header>
 
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+  <nav
+    class="navbar navbar-expand-lg navbar-dark"
+    aria-label="Main navigation"
+  >
 
     <div class="container">
 
-      <!-- CHANGED TO index.html -->
-      <a class="navbar-brand" href="index.html">
+      <a
+        class="navbar-brand"
+        href="index.html"
+      >
         Home
       </a>
 
@@ -167,9 +326,13 @@
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+
 
       <div
         class="collapse navbar-collapse"
@@ -178,15 +341,20 @@
 
         <ul class="navbar-nav ms-auto">
 
-          <!-- CHANGED Quiz.html TO quiz.html -->
           <li class="nav-item">
-            <a class="nav-link" href="quiz.html">
+            <a
+              class="nav-link"
+              href="quiz.html"
+            >
               Quiz
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="photos.html">
+            <a
+              class="nav-link"
+              href="photos.html"
+            >
               Gallery
             </a>
           </li>
@@ -210,7 +378,7 @@
           </li>
 
 
-          <!-- School Values -->
+          <!-- SCHOOL VALUES -->
           <li class="nav-item dropdown">
 
             <a
@@ -219,6 +387,7 @@
               id="ValuesDropdown"
               role="button"
               data-bs-toggle="dropdown"
+              aria-expanded="false"
             >
               School values
             </a>
@@ -287,7 +456,7 @@
           </li>
 
 
-         
+          <!-- EVENTS -->
           <li class="nav-item dropdown">
 
             <a
@@ -296,6 +465,7 @@
               id="EventsDropdown"
               role="button"
               data-bs-toggle="dropdown"
+              aria-expanded="false"
             >
               Events
             </a>
@@ -336,6 +506,8 @@
                 <a
                   class="dropdown-item"
                   href="https://www.facebook.com/reel/1224872192058359"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Award Ceremony
                 </a>
@@ -346,35 +518,31 @@
           </li>
 
 
-          
+          <!-- VIRTUAL LAB -->
           <li class="nav-item">
-
             <a
               class="nav-link"
               href="virtual-lab.html"
             >
               Virtual Lab
             </a>
-
           </li>
 
 
-          <!-- About Us -->
+          <!-- ABOUT -->
           <li class="nav-item">
-
             <a
               class="nav-link"
               href="about.html"
             >
               About Us
             </a>
-
           </li>
 
         </ul>
 
 
-       
+        <!-- ADMIN -->
         <ul class="navbar-nav ms-auto">
 
           <li class="nav-item">
@@ -383,11 +551,8 @@
               class="nav-link text-white fw-bold"
               href="adminlog.html"
             >
-
               <i class="fas fa-user-gear me-1"></i>
-
               Admin Login
-
             </a>
 
           </li>
@@ -395,123 +560,161 @@
         </ul>
 
       </div>
+
     </div>
 
   </nav>
 
 
-  <!-- Hero Section -->
-  <section class="container hero-section">
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+  <main>
 
-    <h2>
-      Welcome to Kgomotso High School
-    </h2>
 
-    <p class="lead mt-3">
-      The mighty giraffes aiming for top leafs.
-    </p>
-
-    <a
-      href="registration.html"
-      class="btn btn-warning mt-4"
+    <!-- HERO -->
+    <section
+      class="container hero-section"
+      aria-labelledby="welcome-heading"
     >
-      Enroll Now
-    </a>
 
-  </section>
+      <h2 id="welcome-heading">
+        Welcome to Kgomotso High School
+      </h2>
+
+      <p class="lead mt-3">
+        The mighty giraffes aiming for top leafs.
+      </p>
+
+      <a
+        href="registration.html"
+        class="btn btn-warning mt-4"
+      >
+        Enroll Now
+      </a>
+
+    </section>
 
 
-  <!-- Dynamic Content Section -->
-  <section class="container content-section">
-
-    <h3 class="mb-4 text-center">
-      Latest Announcements
-    </h3>
-
-    <div id="contentArea"></div>
-
-  </section>
-
-
-
-  <div class="mt-4 text-center">
-
-    <button
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#checkModal"
+    <!-- ANNOUNCEMENTS -->
+    <section
+      class="container content-section"
+      aria-labelledby="announcements-heading"
     >
-      Check Acceptance
-    </button>
 
-  </div>
+      <h2
+        id="announcements-heading"
+        class="mb-4 text-center"
+      >
+        Latest School Announcements
+      </h2>
 
+      <div id="contentArea"></div>
 
-  <div
-    class="modal fade"
-    id="checkModal"
-    tabindex="-1"
-  >
-
-    <div class="modal-dialog">
-
-      <div class="modal-content">
-
-        <div class="modal-header">
-
-          <h5 class="modal-title">
-            Check Your Acceptance Status
-          </h5>
-
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-          ></button>
-
-        </div>
+    </section>
 
 
-        <div class="modal-body">
+    <!-- ACCEPTANCE -->
+    <section
+      class="container text-center mt-4"
+      aria-labelledby="acceptance-heading"
+    >
 
-          <form id="checkForm">
+      <h2
+        id="acceptance-heading"
+        class="visually-hidden"
+      >
+        Acceptance Status
+      </h2>
 
-            <div class="mb-3">
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#checkModal"
+      >
+        Check Acceptance
+      </button>
 
-              <label class="form-label">
-                Enter Your Full Name or Email address:
-              </label>
+    </section>
 
-              <input
-                type="text"
-                class="form-control"
-                id="idNumber"
-                required
-                placeholder="Enter Your Full Name or Email address"
-              />
 
-            </div>
+    <!-- ACCEPTANCE MODAL -->
+    <div
+      class="modal fade"
+      id="checkModal"
+      tabindex="-1"
+      aria-labelledby="checkModalLabel"
+      aria-hidden="true"
+    >
+
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+
+            <h5
+              class="modal-title"
+              id="checkModalLabel"
+            >
+              Check Your Acceptance Status
+            </h5>
 
             <button
-              type="submit"
-              class="btn btn-success w-100 py-2 mt-3"
-            >
-              Check Status
-            </button>
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
 
-          </form>
-
-
-          <div
-            id="result"
-            class="mt-3"
-          ></div>
+          </div>
 
 
-          <div
-            id="latestRegistration"
-            class="mt-4"
-          ></div>
+          <div class="modal-body">
+
+            <form id="checkForm">
+
+              <div class="mb-3">
+
+                <label
+                  class="form-label"
+                  for="idNumber"
+                >
+                  Enter Your Full Name or Email Address
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="idNumber"
+                  required
+                  placeholder="Enter your full name or email address"
+                />
+
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-success w-100 py-2 mt-3"
+              >
+                Check Status
+              </button>
+
+            </form>
+
+
+            <div
+              id="result"
+              class="mt-3"
+            ></div>
+
+
+            <div
+              id="latestRegistration"
+              class="mt-4"
+            ></div>
+
+          </div>
 
         </div>
 
@@ -519,95 +722,120 @@
 
     </div>
 
-  </div>
 
-
-  
-  <section class="container donation-section">
-
-    <h3 class="mb-4">
-      Support Us
-    </h3>
-
-    <p>
-      Your generous donation helps us continue providing quality education to our students.
-    </p>
-
-    <a
-      href="https://www.absa.co.za/personal/"
-      class="donation-btn"
-      target="_blank"
+    <!-- DONATION -->
+    <section
+      class="container donation-section"
+      aria-labelledby="support-heading"
     >
-      Donate Now
-    </a>
 
-
-    <div class="mt-4">
-
-      <p>
-        <strong>Bank Details for Donations:</strong>
-      </p>
-
-      <ul>
-
-        <li>
-          <strong>Bank Name:</strong>
-          ABSA
-        </li>
-
-        <li>
-          <strong>Account Name:</strong>
-          Kgomotso High School
-        </li>
-
-        <li>
-          <strong>Account Number:</strong>
-          409 765 0375
-        </li>
-
-        <li>
-          <strong>Branch Code:</strong>
-          632005
-        </li>
-
-      </ul>
-
+      <h2 id="support-heading">
+        Support Kgomotso High School
+      </h2>
 
       <p>
-        Or scan the QR code below to donate:
+        Your generous donation helps us continue providing quality education to our students.
       </p>
 
-      <img
-        src="QR code.png"
-        alt="QR Code for Donation"
-        class="img-fluid"
-        style="max-width: 200px"
-      />
-
-    </div>
-
-  </section>
+      <a
+        href="https://www.absa.co.za/personal/"
+        class="donation-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Donate Now
+      </a>
 
 
-  <!-- Footer -->
+      <div class="mt-4">
+
+        <p>
+          <strong>
+            Bank Details for Donations:
+          </strong>
+        </p>
+
+        <ul>
+
+          <li>
+            <strong>Bank Name:</strong>
+            ABSA
+          </li>
+
+          <li>
+            <strong>Account Name:</strong>
+            Kgomotso High School
+          </li>
+
+          <li>
+            <strong>Account Number:</strong>
+            409 765 0375
+          </li>
+
+          <li>
+            <strong>Branch Code:</strong>
+            632005
+          </li>
+
+        </ul>
+
+
+        <p>
+          Or scan the QR code below to donate:
+        </p>
+
+        <img
+          src="QR code.png"
+          alt="Kgomotso High School donation QR code"
+          class="img-fluid"
+          style="max-width: 200px"
+        />
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
   <footer id="footer-section">
 
     <div class="footer-section">
 
-      <h3>
-        Contact Us
-      </h3>
+      <h2>
+        Contact Kgomotso High School
+      </h2>
 
       <p>
-        Email: kgomotsoss@ncdoe.school.za
+        Email:
+        <a
+          href="mailto:kgomotsoss@ncdoe.school.za"
+          class="text-white"
+        >
+          kgomotsoss@ncdoe.school.za
+        </a>
       </p>
 
       <p>
-        Phone: (083) 378 9086
+        Phone:
+        <a
+          href="tel:+27833789086"
+          class="text-white"
+        >
+          (083) 378 9086
+        </a>
       </p>
 
       <p>
-        Address: 2901 Mosegedi Street, Pampierstad, 8566, Northern Cape, South Africa
+        Address:
+        2901 Mosegedi Street,
+        Pampierstad,
+        8566,
+        Northern Cape,
+        South Africa
       </p>
 
     </div>
@@ -615,26 +843,35 @@
 
     <div class="footer-section">
 
-      <h3>
-        Follow Us
-      </h3>
+      <h2>
+        Follow Kgomotso High School
+      </h2>
 
       <div class="social-icons">
 
         <a
           href="https://web.facebook.com/kgomotsohighschoolofficial/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Kgomotso High School on Facebook"
         >
           <i class="fab fa-facebook"></i>
         </a>
 
         <a
           href="https://www.tiktok.com/@khschoir/video/7360244795987561734"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Kgomotso High School on TikTok"
         >
           <i class="fab fa-tiktok"></i>
         </a>
 
         <a
           href="https://x.com/kgomotsohighschoolofficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Kgomotso High School on X"
         >
           <i class="fab fa-twitter"></i>
         </a>
@@ -643,29 +880,36 @@
 
     </div>
 
-    &copy; 2025 Kgomotso High School. All rights reserved.
+
+    <p class="mb-0">
+      &copy; 2025 Kgomotso High School. All rights reserved.
+    </p>
 
   </footer>
 
 
-  
+  <!-- =========================
+       BOOTSTRAP JS
+       ========================= -->
   <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-  </script>
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  ></script>
 
 
-  
+  <!-- =========================
+       FIREBASE
+       ========================= -->
   <script
-    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js">
-  </script>
+    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"
+  ></script>
 
   <script
-    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js">
-  </script>
+    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"
+  ></script>
 
   <script
-    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js">
-  </script>
+    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"
+  ></script>
 
 
   <script>
@@ -696,15 +940,18 @@
     };
 
 
-    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(
+      firebaseConfig
+    );
+
 
     const db =
       firebase.database();
 
 
-    // -----------------------------
-    // Load Content Manager Posts
-    // -----------------------------
+    // =============================
+    // LOAD ANNOUNCEMENTS
+    // =============================
 
     const contentArea =
       document.getElementById(
@@ -741,9 +988,9 @@
 
               div.innerHTML = `
 
-                <h5>
+                <h3>
                   ${post.title}
-                </h5>
+                </h3>
 
                 <p>
                   ${post.body}
@@ -779,7 +1026,10 @@
     );
 
 
-    
+    // =============================
+    // ACCEPTANCE CHECKER
+    // =============================
+
     document
       .getElementById(
         'checkForm'
@@ -873,8 +1123,7 @@
               if (found) {
 
                 if (
-                  found.accepted ===
-                  "yes"
+                  found.accepted === "yes"
                 ) {
 
                   resultDiv.innerHTML = `
@@ -888,8 +1137,7 @@
                 }
 
                 else if (
-                  found.accepted ===
-                  "no"
+                  found.accepted === "no"
                 ) {
 
                   resultDiv.innerHTML = `
@@ -947,7 +1195,6 @@
                     latestRegistrationDiv.innerHTML = `
 
                       <p>
-
                         <strong>
                           Latest Registration:
                         </strong>
@@ -959,7 +1206,6 @@
 
                         Phone:
                         ${latest.phone}
-
                       </p>
 
                     `;
@@ -990,4 +1236,4 @@
 
 </body>
 </html>
-
+```
