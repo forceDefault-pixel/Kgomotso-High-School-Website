@@ -2,6 +2,13 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
+
+  <!-- Google Search Console Verification -->
+  <meta
+    name="google-site-verification"
+    content="wov1f-jMYw3-HIi_lK4_u9Svrekxc6hdeQl-2_tMJIQ"
+  />
+
   <meta charset="UTF-8" />
 
   <meta
@@ -9,56 +16,42 @@
     content="width=device-width, initial-scale=1"
   />
 
-  <!-- =========================
-       SEO TITLE
-       ========================= -->
+  <!-- SEO TITLE -->
   <title>
     Kgomotso High School | Official School Website
   </title>
 
-  <!-- =========================
-       SEO DESCRIPTION
-       ========================= -->
+  <!-- SEO DESCRIPTION -->
   <meta
     name="description"
     content="Official website of Kgomotso High School. Find school information, announcements, registration, library resources, virtual learning, quizzes, gallery and more."
   />
 
-  <!-- =========================
-       SEARCH ENGINE INSTRUCTIONS
-       ========================= -->
+  <!-- SEARCH ENGINE INSTRUCTIONS -->
   <meta
     name="robots"
     content="index, follow"
   />
 
-  <!-- =========================
-       CANONICAL URL
-       ========================= -->
+  <!-- CANONICAL URL -->
   <link
     rel="canonical"
     href="https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/"
   />
 
-  <!-- =========================
-       AUTHOR
-       ========================= -->
+  <!-- AUTHOR -->
   <meta
     name="author"
     content="Kgomotso High School"
   />
 
-  <!-- =========================
-       THEME COLOR
-       ========================= -->
+  <!-- THEME COLOR -->
   <meta
     name="theme-color"
     content="#ffc107"
   />
 
-  <!-- =========================
-       OPEN GRAPH / FACEBOOK
-       ========================= -->
+  <!-- OPEN GRAPH / FACEBOOK -->
   <meta
     property="og:type"
     content="website"
@@ -89,9 +82,7 @@
     content="https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/kss%20logo.png"
   />
 
-  <!-- =========================
-       TWITTER / X
-       ========================= -->
+  <!-- TWITTER / X -->
   <meta
     name="twitter:card"
     content="summary_large_image"
@@ -112,36 +103,26 @@
     content="https://forcedefault-pixel.github.io/Kgomotso-High-School-Website/kss%20logo.png"
   />
 
-  <!-- =========================
-       FAVICON
-       ========================= -->
+  <!-- FAVICON -->
   <link
     rel="icon"
     type="image/png"
     href="kss logo.png"
   />
 
-  <!-- =========================
-       BOOTSTRAP
-       ========================= -->
+  <!-- BOOTSTRAP -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
 
-  <!-- =========================
-       FONT AWESOME
-       ========================= -->
+  <!-- FONT AWESOME -->
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     rel="stylesheet"
   />
 
-  <!-- =========================
-       STRUCTURED DATA
-       Helps search engines
-       understand the school.
-       ========================= -->
+  <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -164,6 +145,7 @@
   </script>
 
   <style>
+
     body {
       background-color: #f8f9fa;
       font-family: 'Arial', sans-serif;
@@ -197,6 +179,7 @@
     }
 
     @keyframes slideIn {
+
       from {
         transform: translateY(-50px);
         opacity: 0;
@@ -206,6 +189,7 @@
         transform: translateY(0);
         opacity: 1;
       }
+
     }
 
     footer {
@@ -273,14 +257,14 @@
     .content-card small {
       color: #6c757d;
     }
+
   </style>
+
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- HEADER -->
   <header class="py-4 text-center">
 
     <div class="d-flex justify-content-center align-items-center">
@@ -304,9 +288,7 @@
   </header>
 
 
-  <!-- =========================
-       NAVIGATION
-       ========================= -->
+  <!-- NAVIGATION -->
   <nav
     class="navbar navbar-expand-lg navbar-dark"
     aria-label="Main navigation"
@@ -520,23 +502,27 @@
 
           <!-- VIRTUAL LAB -->
           <li class="nav-item">
+
             <a
               class="nav-link"
               href="virtual-lab.html"
             >
               Virtual Lab
             </a>
+
           </li>
 
 
           <!-- ABOUT -->
           <li class="nav-item">
+
             <a
               class="nav-link"
               href="about.html"
             >
               About Us
             </a>
+
           </li>
 
         </ul>
@@ -551,8 +537,11 @@
               class="nav-link text-white fw-bold"
               href="adminlog.html"
             >
+
               <i class="fas fa-user-gear me-1"></i>
+
               Admin Login
+
             </a>
 
           </li>
@@ -566,11 +555,8 @@
   </nav>
 
 
-  <!-- =========================
-       MAIN CONTENT
-       ========================= -->
+  <!-- MAIN CONTENT -->
   <main>
-
 
     <!-- HERO -->
     <section
@@ -798,9 +784,7 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <!-- FOOTER -->
   <footer id="footer-section">
 
     <div class="footer-section">
@@ -888,17 +872,13 @@
   </footer>
 
 
-  <!-- =========================
-       BOOTSTRAP JS
-       ========================= -->
+  <!-- BOOTSTRAP JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
   ></script>
 
 
-  <!-- =========================
-       FIREBASE
-       ========================= -->
+  <!-- FIREBASE -->
   <script
     src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"
   ></script>
@@ -949,9 +929,7 @@
       firebase.database();
 
 
-    // =============================
     // LOAD ANNOUNCEMENTS
-    // =============================
 
     const contentArea =
       document.getElementById(
@@ -1026,9 +1004,7 @@
     );
 
 
-    // =============================
     // ACCEPTANCE CHECKER
-    // =============================
 
     document
       .getElementById(
@@ -1195,6 +1171,7 @@
                     latestRegistrationDiv.innerHTML = `
 
                       <p>
+
                         <strong>
                           Latest Registration:
                         </strong>
@@ -1206,6 +1183,7 @@
 
                         Phone:
                         ${latest.phone}
+
                       </p>
 
                     `;
@@ -1236,4 +1214,4 @@
 
 </body>
 </html>
-```
+
