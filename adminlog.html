@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kgomotso High School - Our Students</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    header {
+      background-color: #ffc107;
+      color: white;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: white;
+    }
+    .navbar .nav-link:hover {
+      color: #ffc107;
+    }
+    .slogan {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f39c12;
+      text-align: center;
+      margin-top: 10px;
+      animation: slideIn 2s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .login-box {
+      max-width: 400px;
+      margin: 60px auto 30px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .btn-login {
+      background-color: #343a40;
+      color: white;
+    }
+    .btn-login:hover {
+      background-color: #ffc107;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="py-4 text-center">
+    <div class="d-flex justify-content-center align-items-center">
+      <img src="kss logo.png" alt="Kgomotso High School Logo" style="max-width: 120px; height: auto; margin-right: 15px;" />
+      <h1 class="text-white">Kgomotso High School</h1>
+    </div>
+    <div class="slogan">our admin</div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">Home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Login Box -->
+  <div class="login-box">
+    <h3 class="text-center mb-4">Admin Login</h3>
+    <form id="adminLoginForm">
+      <div class="mb-3">
+        <label for="adminEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="adminEmail" required />
+      </div>
+      <div class="mb-3">
+        <label for="adminPassword" class="form-label">Password</label>
+        <input type="password" class="form-control" id="adminPassword" required />
+      </div>
+      <button type="submit" class="btn btn-login w-100">Login</button>
+      <div id="loginMessage" class="mt-3 text-center text-danger"></div>
+    </form>
+  </div>
+
+  <!-- Firebase Login Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCDppMXDsuKaklQ5JWgeLwhVEoTMmxd0tE",
+      authDomain: "kgomotso-high-school.firebaseapp.com",
+      databaseURL: "https://kgomotso-high-school-default-rtdb.firebaseio.com",
+      projectId: "kgomotso-high-school",
+      storageBucket: "kgomotso-high-school.firebasestorage.app",
+      messagingSenderId: "836088798942",
+      appId: "1:836088798942:web:2473252e5ca0a5a380ec4f",
+      measurementId: "G-PZ3PDQRNN0"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+
+    document.getElementById('adminLoginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('adminEmail').value;
+      const password = document.getElementById('adminPassword').value;
+      const message = document.getElementById('loginMessage');
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          message.style.color = "green";
+          message.textContent = "Login successful!";
+          setTimeout(() => {
+            window.location.href = "admin_dashboard.html";
+          }, 1000);
+        })
+        .catch((error) => {
+          message.textContent = "Login failed: " + error.message;
+        });
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kgomotso High School - Virtual Lab</title>
+
+  <!-- lets style with CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    header {
+      background-color: #ffc107;
+      color: white;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: white;
+    }
+    .navbar .nav-link:hover {
+      color: #ffc107;
+    }
+    .slogan {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f39c12;
+      text-align: center;
+      margin-top: 10px;
+      animation: slideIn 2s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .gallery-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .video-embed {
+      width: 100%;
+      height: 315px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .video-caption {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 50px;
+    }
+    .back-home-link {
+      display: inline-block;
+      background-color: #343a40;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: color 0.3s, background-color 0.3s;
+    }
+    .back-home-link:hover {
+      color: #ffc107;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="py-4 text-center">
+  <div class="d-flex justify-content-center align-items-center">
+    <img src="kss logo.png" alt="Kgomotso High School Logo" style="max-width: 120px; height: auto; margin-right: 15px;" />
+    <h1 class="text-white">Kgomotso High School</h1>
+  </div>
+  <div class="slogan">virtual learning</div>
+</header>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="home.html">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="Quiz.html">Quiz</a></li>
+        <li class="nav-item"><a class="nav-link" href="photos.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="library.html">Library</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="ValuesDropdown" role="button" data-bs-toggle="dropdown">School values</a>
+          <ul class="dropdown-menu" aria-labelledby="ValuesDropdown">
+            <li><a class="dropdown-item" href="#">1.Servant-Leadership</a></li>
+            <li><a class="dropdown-item" href="#">2.Self-Discipline</a></li>
+            <li><a class="dropdown-item" href="#">3.Tolerance</a></li>
+            <li><a class="dropdown-item" href="#">4.Respect</a></li>
+            <li><a class="dropdown-item" href="#">5.Ubuntu</a></li>
+            <li><a class="dropdown-item" href="#">6.Excellence</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown">Events</a>
+          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="#">Sports Day</a></li>
+            <li><a class="dropdown-item" href="#">No Schoolbag Challenge</a></li>
+            <li><a class="dropdown-item" href="#">Ms KHS</a></li>
+            <li><a class="dropdown-item" href="#">Award Ceremony</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="virtual-lab.html">Virtual Lab</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Virtual Lab Section -->
+<section class="container gallery-section">
+  <h2>Virtual Science Lab</h2>
+  <p class="lead mt-3">Watch practical experiments from each subject area.</p>
+
+  <!-- Agricultural Sciences -->
+  <h4 class="mt-5">Agricultural Sciences</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/UoD-cUMkRZY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption mt-2">Soil Testing Demonstration</div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/3e9-sUB1ffw" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption mt-2">Crop Rotation Explained</div>
+    </div>
+  </div>
+
+  <!-- Life Sciences -->
+  <h4 class="mt-5">Life Sciences</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <iframe class="video-embed" src="https://www.youtube.com/embed/h6WtZm1kyGs" frameborder="0" allowfullscreen></iframe>
+      <div class="video-caption">Photosynthesis Experiment</div>
+    </div>
+    <div class="col-md-6">
+      <iframe class="video-embed" src="https://www.youtube.com/embed/3W9g4KBiKxU" frameborder="0" allowfullscreen></iframe>
+      <div class="video-caption">Respiration in Germinating Seeds</div>
+    </div>
+  </div>
+
+  <!-- Physical Sciences -->
+  <h4 class="mt-5">Physical Sciences</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <iframe class="video-embed" src="https://www.youtube.com/embed/5iowJs6MryI" frameborder="0" allowfullscreen></iframe>
+      <div class="video-caption">Chemical Reactions in Action</div>
+    </div>
+    <div class="col-md-6">
+      <iframe class="video-embed" src="https://www.youtube.com/embed/JGO_zDWmkvk" frameborder="0" allowfullscreen></iframe>
+      <div class="video-caption">Newton’s Laws Demonstration</div>
+    </div>
+  </div>
+</section>
+
+<!-- Back to Home Link -->
+<div class="text-center my-4">
+  <a href="home.html" class="back-home-link">
+    <i class="fas fa-arrow-left"></i> Back to Home
+  </a>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Kgomotso High School. All rights reserved.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

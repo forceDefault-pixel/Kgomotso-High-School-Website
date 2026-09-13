@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KHS Library</title>
+
+  <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    header {
+      background-color: #ffc107;
+      color: white;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: white;
+    }
+    .navbar .nav-link:hover {
+      color: #ffc107;
+    }
+    .slogan {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f39c12;
+      text-align: center;
+      margin-top: 10px;
+      animation: slideIn 2s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .library-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .ebook-list {
+      text-align: left;
+      max-width: 600px;
+      margin: 30px auto 0;
+    }
+    .ebook-list li {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .ebook-list a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .ebook-list a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="py-4 text-center">
+  <div class="d-flex justify-content-center align-items-center">
+    <img src="kss logo.png" alt="KHS logo" style="max-width: 120px; height: auto; margin-right: 15px;">
+    <h1 class="text-white">Kgomotso High School</h1>
+  </div>
+  <div class="slogan">study time</div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="home.html">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+        <li class="nav-item"><a class="nav-link" href="photos.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="library.html">Library</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="ValuesDropdown" role="button" data-bs-toggle="dropdown">
+            School values
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="ValuesDropdown">
+            <li><a class="dropdown-item" href="#">1.Servant-Leadership</a></li>
+            <li><a class="dropdown-item" href="#">2.Self-Discipline</a></li>
+            <li><a class="dropdown-item" href="#">3.Tolerance</a></li>
+            <li><a class="dropdown-item" href="#">4.Respect</a></li>
+            <li><a class="dropdown-item" href="#">5.Ubuntu</a></li>
+            <li><a class="dropdown-item" href="#">6.Excellence</a></li>
+
+
+          </ul>
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown">
+            Events
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="#">Sports Day</a></li>
+            <li><a class="dropdown-item" href="#">No Schoolbag Challenge</a></li>
+            <li><a class="dropdown-item" href="#">Ms KHS</a></li>
+            <li><a class="dropdown-item" href="#">Award Ceremony</a></li>
+          </ul>
+            <li class="nav-item"><a class="nav-link" href="virtual-lab.html">Virtual Lab</a></li>
+
+           <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Library Section -->
+<section class="container library-section">
+  <h2>School Library – Free E-books</h2>
+  <p class="lead mt-3">Explore, read, and learn with our collection of e-books for students and teachers.</p>
+
+  <ul class="list-unstyled ebook-list">
+    <li><a href="https://kfmulaudzi.wordpress.com/wp-content/uploads/2020/06/setswana-novel-ntlhomole-mmutlwa.pdf" target="_blank"><i class="fas fa-book"></i> ntlhomole-mmutlwa.pdf</a></li>
+               <li><a href="https://www.scribd.com/document/691032081/My-children-My-Africa" target="_blank"><i class="fas fa-book"></i> My-children-My-Africa</a></li>
+    <li><a href="https://dinwiddiehighschool.co.za/wp-content/uploads/2020/11/grd-12-textbook.pdf" target="_blank"><i class="fas fa-book"></i> life sciences grade 12 textbook</a></li>
+    <li><a href="https://viaafrika.com/wp-content/uploads/2020/06/Gr12-Agricultural-Science-Study-Guide_LR.pdf" target="_blank"><i class="fas fa-book"></i> Agricultural sciences grade 12 textbook</a></li>
+        <li><a href="https://drive.google.com/file/d/1HSeEvprRH7xoETwj3PdHyUvEIMEFYusk/view" target="_blank"><i class="fas fa-book"></i> Geography grade 12 textbook</a></li>
+    <li><a href="https://www.siyavula.com/read" target="_blank"><i class="fas fa-book"></i> Easy access to all books </a></li>
+      </ul>
+
+  <div class="mt-4">
+    <a href="home.html" class="btn btn-secondary">← Back to Home</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Kgomotso High School. All rights reserved.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

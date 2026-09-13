@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard - Kgomotso High School</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background-color: #f8f9fa; font-family: Arial, sans-serif; }
+    header { background-color: #ffc107; color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
+    header img { max-width: 100px; margin-right: 15px; }
+    table th { background-color: #343a40; color: white; }
+    .nav-tabs .nav-link.active { background-color: #ffc107; color: white; }
+    #welcomeMessage { background: #343a40; color: #ffc107; font-size: 1.5rem; font-weight: bold; text-align: center; padding: 15px 0; margin-top: -10px; opacity: 0; transform: translateY(-30px); animation: slideFadeIn 2s forwards; border-radius: 0 0 10px 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); user-select: none; }
+    @keyframes slideFadeIn { to { opacity: 1; transform: translateY(0); } }
+    #toastContainer { position: fixed; bottom: 1rem; right: 1rem; z-index: 1080; }
+    #rawDataModal .modal-dialog { max-width: 800px; }
+    #rawDataContent { font-family: monospace; white-space: pre-wrap; word-wrap: break-word; max-height: 400px; overflow-y: auto; }
+    .highlight { background: yellow; }
+    .small-preview { max-width: 120px; max-height: 90px; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="d-flex align-items-center">
+      <img src="kss logo.png" alt="Logo" />
+      <h2>Kgomotso High School - Admin Dashboard</h2>
+    </div>
+    <button class="btn btn-danger" id="logoutBtn">Logout</button>
+  </header>
+
+  <div id="welcomeMessage">🎉 Welcome back, Admin! The power is all yours!!! 🚀</div>
+
+  <div class="container my-4">
+    <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#content" type="button">Content Manager</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#students" type="button">Student Manager</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#staff" type="button">Staff Manager</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#gallery" type="button">Gallery Manager</button></li>
+    </ul>
+
+    <div class="tab-content mt-3">
+      <!-- ===== CONTENT MANAGER ===== -->
+      <div class="tab-pane fade show active" id="content">
+        <h4 class="mb-3">Content Manager</h4>
+
+        <!-- Quick Stats -->
+        <div class="row mb-4">
+          <div class="col-md-3 mb-2">
+            <div class="card text-bg-primary shadow">
+              <div class="card-body text-center">
+                <h5 class="card-title">Students</h5>
+                <h2 id="statStudents">0</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-2">
+            <div class="card text-bg-success shadow">
+              <div class="card-body text-center">
+                <h5 class="card-title">Announcements</h5>
+                <h2 id="statAnnouncements">0</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-2">
+            <div class="card text-bg-warning shadow">
+              <div class="card-body text-center">
+                <h5 class="card-title">Subjects</h5>
+                <h2 id="statSubjects">0</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-2">
+            <div class="card text-bg-danger shadow">
+              <div class="card-body text-center">
+                <h5 class="card-title">Gallery Items</h5>
+                <h2 id="statGallery">0</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gx-4">
+          <div class="col-lg-6">
+            <!-- Announcements -->
+            <div class="card mb-3">
+              <div class="card-header">📢 Announcements</div>
+              <div class="card-body">
+                <form id="announcementForm" class="d-flex mb-2">
+                  <input type="text" id="announcementText" class="form-control me-2" placeholder="Write an announcement..." required>
+                  <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+                <ul id="announcementList" class="list-group"></ul>
+              </div>
+            </div>
+
+            <!-- Subjects -->
+            <div class="card mb-3">
+              <div class="card-header">📚 Subjects</div>
+              <div class="card-body">
+                <form id="subjectForm" class="d-flex mb-2">
+                  <input type="text" id="subjectName" class="form-control me-2" placeholder="Add a subject..." required>
+                  <button type="submit" class="btn btn-success">Add</button>
+                </form>
+                <ul id="subjectList" class="list-group"></ul>
+              </div>
+            </div>
+
+            <!-- Timetable (upload to storage) -->
+            <div class="card mb-3">
+              <div class="card-header">📅 Timetable Upload</div>
+              <div class="card-body">
+                <form id="timetableForm" class="mb-2">
+                  <input type="file" id="timetableFile" class="form-control mb-2" accept=".pdf,.jpg,.jpeg,.png" required>
+                  <button type="submit" class="btn btn-warning">Upload & Save</button>
+                </form>
+                <div id="timetablePreview" class="mb-2"></div>
+                <ul id="timetableList" class="list-group"></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <!-- Media & News -->
+            <div class="card mb-3">
+              <div class="card-header">📰 Media & News</div>
+              <div class="card-body">
+                <form id="mediaForm" class="mb-2">
+                  <input type="text" id="mediaTitle" class="form-control mb-2" placeholder="Title" required>
+                  <textarea id="mediaContent" class="form-control mb-2" placeholder="Write content..." required></textarea>
+                  <input type="file" id="mediaFile" class="form-control mb-2" accept="image/*,video/*">
+                  <button type="submit" class="btn btn-danger">Post</button>
+                </form>
+                <div id="mediaList" class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Gallery Uploader -->
+            <div class="card mb-3">
+              <div class="card-header">🖼️ Gallery Upload</div>
+              <div class="card-body">
+                <form id="galleryForm" class="mb-2">
+                  <input type="file" id="galleryFile" class="form-control mb-2" accept="image/*" multiple>
+                  <input type="text" id="galleryCaption" class="form-control mb-2" placeholder="Caption (optional)">
+                  <button class="btn btn-secondary" type="submit">Upload Images</button>
+                </form>
+                <div id="galleryPreview" class="d-flex gap-2 flex-wrap mt-2"></div>
+                <div id="galleryList" class="mt-2"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== STUDENT MANAGER ===== -->
+      <div class="tab-pane fade" id="students">
+        <h4>Manage Students</h4>
+        <form id="studentForm" class="mb-4">
+          <div class="mb-3">
+            <label for="studentName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="studentName" required />
+          </div>
+          <div class="mb-3">
+            <label for="studentGrade" class="form-label">Grade</label>
+            <input type="text" class="form-control" id="studentGrade" required />
+          </div>
+          <div class="mb-3">
+            <label for="studentEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="studentEmail" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Add Student</button>
+        </form>
+
+        <input type="text" id="studentSearch" class="form-control mb-3" placeholder="Search students..." />
+        <table class="table table-bordered table-hover">
+          <thead><tr><th>Name</th><th>Grade</th><th>Email</th><th>Actions</th></tr></thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- ===== STAFF MANAGER ===== -->
+      <div class="tab-pane fade" id="staff">
+        <h4>Manage Staff</h4>
+        <form id="staffForm" class="mb-4">
+          <div class="mb-3">
+            <label for="staffName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="staffName" required />
+          </div>
+          <div class="mb-3">
+            <label for="staffRole" class="form-label">Role</label>
+            <input type="text" class="form-control" id="staffRole" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Add Staff</button>
+        </form>
+
+        <table class="table table-bordered table-hover">
+          <thead><tr><th>Name</th><th>Role</th><th>Actions</th></tr></thead>
+          <tbody id="staffTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="tab-pane fade" id="gallery"></div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+    import { getDatabase, ref, push, set, update, remove, onChildAdded, onChildChanged, onChildRemoved, onValue } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
+    import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-storage.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCWxVFr9b7-SaKmyEcONb8mgYrowc9PCzs",
+      authDomain: "learnernames.firebaseapp.com",
+      databaseURL: "https://learnernames-default-rtdb.firebaseio.com",
+      projectId: "learnernames",
+      storageBucket: "learnernames.firebasestorage.app",
+      messagingSenderId: "165099332497",
+      appId: "1:165099332497:web:084c188fae0175783ff030"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const storage = getStorage(app);
+
+    // ---------------------- TOAST FUNCTION ----------------------
+    function showToast(message, type="primary") {
+      const toastContainer = document.getElementById("toastContainer");
+      const toastEl = document.createElement("div");
+      toastEl.className = `toast align-items-center text-bg-${type} border-0`;
+      toastEl.innerHTML = `<div class="d-flex"><div class="toast-body">${message}</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div>`;
+      toastContainer.appendChild(toastEl);
+      const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
+      toast.show();
+      toastEl.addEventListener("hidden.bs.toast", ()=> toastEl.remove());
+    }
+
+    // ---------------------- STUDENT MANAGER ----------------------
+    const studentForm = document.getElementById("studentForm");
+    const studentNameInput = document.getElementById("studentName");
+    const studentGradeInput = document.getElementById("studentGrade");
+    const studentEmailInput = document.getElementById("studentEmail");
+    const studentTableBody = document.getElementById("studentTableBody");
+
+    let allStudents = [];
+
+    studentForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = studentNameInput.value.trim();
+      const grade = studentGradeInput.value.trim();
+      const email = studentEmailInput.value.trim();
+      if (!name || !grade || !email) return showToast("All fields required", "warning");
+
+      const newStudentRef = push(ref(db, "students"));
+      await set(newStudentRef, { name, grade, email });
+      studentForm.reset();
+    });
+
+    function renderStudentRow(student) {
+      const tr = document.createElement("tr");
+      tr.setAttribute("data-id", student.id);
+      tr.innerHTML = `
+        <td>${student.name}</td>
+        <td>${student.grade}</td>
+        <td>${student.email}</td>
+        <td>
+          <button class="btn btn-sm btn-info edit-btn">Edit</button>
+          <button class="btn btn-sm btn-danger remove-btn">Remove</button>
+        </td>`;
+      tr.querySelector(".edit-btn").addEventListener("click", () => editStudent(student, tr));
+      tr.querySelector(".remove-btn").addEventListener("click", () => removeStudent(student.id));
+      return tr;
+    }
+
+    function editStudent(student, tr) {
+      const newName = prompt("Edit Name:", student.name);
+      const newGrade = prompt("Edit Grade:", student.grade);
+      const newEmail = prompt("Edit Email:", student.email);
+      if (newName && newGrade && newEmail) {
+        update(ref(db, "students/" + student.id), { name: newName, grade: newGrade, email: newEmail });
+      }
+    }
+
+    async function removeStudent(id) {
+      if (confirm("Remove this student?")) {
+        await remove(ref(db, "students/" + id));
+      }
+    }
+
+    function renderStudentTable() {
+      studentTableBody.innerHTML = "";
+      allStudents.forEach(student => studentTableBody.appendChild(renderStudentRow(student)));
+      document.getElementById("statStudents").textContent = allStudents.length;
+    }
+
+    const studentRef = ref(db, "students");
+    onChildAdded(studentRef, snap => { allStudents.push({ ...snap.val(), id: snap.key }); renderStudentTable(); });
+    onChildChanged(studentRef, snap => { const idx = allStudents.findIndex(s => s.id === snap.key); if(idx>-1) allStudents[idx] = { ...snap.val(), id: snap.key }; renderStudentTable(); });
+    onChildRemoved(studentRef, snap => { allStudents = allStudents.filter(s => s.id!==snap.key); renderStudentTable(); });
+
+    // ---------------------- STAFF MANAGER ----------------------
+    const staffForm = document.getElementById("staffForm");
+    const staffNameInput = document.getElementById("staffName");
+    const staffRoleInput = document.getElementById("staffRole");
+    const staffTableBody = document.getElementById("staffTableBody");
+
+    let allStaff = [];
+
+    staffForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = staffNameInput.value.trim();
+      const role = staffRoleInput.value.trim();
+      if (!name || !role) return showToast("All fields required", "warning");
+
+      const newStaffRef = push(ref(db, "staff"));
+      await set(newStaffRef, { name, role });
+      staffForm.reset();
+    });
+
+    function renderStaffRow(staff) {
+      const tr = document.createElement("tr");
+      tr.setAttribute("data-id", staff.id);
+      tr.innerHTML = `
+        <td>${staff.name}</td>
+        <td>${staff.role}</td>
+        <td>
+          <button class="btn btn-sm btn-info edit-btn">Edit</button>
+          <button class="btn btn-sm btn-danger remove-btn">Remove</button>
+        </td>`;
+      tr.querySelector(".edit-btn").addEventListener("click", () => editStaff(staff, tr));
+      tr.querySelector(".remove-btn").addEventListener("click", () => removeStaff(staff.id));
+      return tr;
+    }
+
+    function editStaff(staff, tr) {
+      const newName = prompt("Edit Name:", staff.name);
+      const newRole = prompt("Edit Role:", staff.role);
+      if (newName && newRole) {
+        update(ref(db, "staff/" + staff.id), { name: newName, role: newRole });
+      }
+    }
+
+    async function removeStaff(id) {
+      if (confirm("Remove this staff member?")) {
+        await remove(ref(db, "staff/" + id));
+      }
+    }
+
+    function renderStaffTable() {
+      staffTableBody.innerHTML = "";
+      allStaff.forEach(staff => staffTableBody.appendChild(renderStaffRow(staff)));
+    }
+
+    const staffRef = ref(db, "staff");
+    onChildAdded(staffRef, snap => { allStaff.push({ ...snap.val(), id: snap.key }); renderStaffTable(); });
+    onChildChanged(staffRef, snap => { const idx = allStaff.findIndex(s => s.id===snap.key); if(idx>-1) allStaff[idx] = { ...snap.val(), id: snap.key }; renderStaffTable(); });
+    onChildRemoved(staffRef, snap => { allStaff = allStaff.filter(s => s.id!==snap.key); renderStaffTable(); });
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

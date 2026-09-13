@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KHS Quiz</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    header {
+      background-color: #ffc107;
+      color: white;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: white;
+    }
+    .navbar .nav-link:hover {
+      color: #ffc107;
+    }
+    .slogan {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f39c12;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .quiz-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 50px;
+    }
+    .modal-backdrop.show {
+      opacity: 0.8;
+      backdrop-filter: blur(5px);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Password Modal -->
+  <div class="modal show" tabindex="-1" style="display:block;" id="passwordModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-warning shadow">
+        <div class="modal-header bg-warning text-white">
+          <h5 class="modal-title">Quiz Access Password</h5>
+        </div>
+        <div class="modal-body">
+          <p>Please enter the quiz password to continue:</p>
+          <input type="password" class="form-control" id="quizPasswordInput" placeholder="Enter password" />
+          <div id="errorMsg" class="text-danger mt-2 d-none">Incorrect password. Try again.</div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="window.location.href='home.html'">Cancel</button>
+          <button class="btn btn-warning" onclick="checkPassword()">Enter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="py-4 text-center">
+    <div class="d-flex justify-content-center align-items-center">
+      <img src="kss logo.png" alt="Kgomotso High School Logo" style="max-width: 120px; height: auto; margin-right: 15px;" />
+      <h1 class="text-white">Kgomotso High School</h1>
+    </div>
+    <div class="slogan">educate minds</div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="photos.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="library.html">Library</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ValuesDropdown" role="button" data-bs-toggle="dropdown">School values</a>
+            <ul class="dropdown-menu" aria-labelledby="ValuesDropdown">
+              <li><a class="dropdown-item" href="#">1.Servant-Leadership</a></li>
+              <li><a class="dropdown-item" href="#">2.Self-Discipline</a></li>
+              <li><a class="dropdown-item" href="#">3.Tolerance</a></li>
+              <li><a class="dropdown-item" href="#">4.Respect</a></li>
+              <li><a class="dropdown-item" href="#">5.Ubuntu</a></li>
+              <li><a class="dropdown-item" href="#">6.Excellence</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown">Events</a>
+            <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+              <li><a class="dropdown-item" href="#">Sports Day</a></li>
+              <li><a class="dropdown-item" href="#">No Schoolbag Challenge</a></li>
+              <li><a class="dropdown-item" href="#">Ms KHS</a></li>
+              <li><a class="dropdown-item" href="#">Award Ceremony</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="virtual-lab.html">Virtual Lab</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Quiz Section -->
+  <section class="container quiz-section">
+    <h2>Choose Your Subject for the Quiz</h2>
+    <form id="subject-form">
+      <select id="subject" class="form-select" onchange="loadQuiz()">
+        <option value="">Select Subject</option>
+        <option value="Agricultural Sciences">Agricultural Sciences</option>
+        <option value="Geography">Geography</option>
+        <option value="Tourism">Tourism</option>
+        <option value="Mathematical Literacy">Mathematical Literacy</option>
+        <option value="Physical Sciences">Physical Sciences</option>
+        <option value="Life Sciences">Life Sciences</option>
+        <option value="Mathematics">Mathematics</option>
+      </select>
+    </form>
+
+    <div id="quiz-container" class="mt-4"></div>
+    <div id="result" class="feedback"></div>
+
+    <div class="mt-4">
+      <button class="btn btn-secondary" onclick="goBack()">← Back to Home</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Kgomotso High School. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const correctPassword = "khs2025";
+
+    function checkPassword() {
+      const input = document.getElementById('quizPasswordInput').value;
+      const errorMsg = document.getElementById('errorMsg');
+      if (input === correctPassword) {
+        document.getElementById('passwordModal').style.display = 'none';
+        document.body.classList.remove('modal-open');
+        document.querySelector('.modal-backdrop')?.remove();
+      } else {
+        errorMsg.classList.remove('d-none');
+      }
+    }
+
+    const quizLinks = {
+      'Agricultural Sciences': 'https://www.proprofs.com/quiz-school/topic/agriculture',
+      'Geography': 'https://www.proprofs.com/quiz-school/topic/geography',
+      'Tourism': 'https://www.proprofs.com/quiz-school/topic/tourism',
+      'Mathematical Literacy': 'https://www.proprofs.com/quiz-school/topic/mathematical-literacy',
+      'Physical Sciences': 'https://www.proprofs.com/quiz-school/topic/physical-science',
+      'Life Sciences': 'https://www.proprofs.com/quiz-school/topic/life-science',
+      'Mathematics': 'https://www.proprofs.com/quiz-school/topic/mathematics'
+    };
+
+    function loadQuiz() {
+      const subject = document.getElementById('subject').value;
+      const quizContainer = document.getElementById('quiz-container');
+
+      if (!subject) {
+        quizContainer.innerHTML = '';
+        return;
+      }
+
+      const quizLink = quizLinks[subject];
+
+      quizContainer.innerHTML = `
+        <h3>Take the ${subject} Quiz</h3>
+        <p>Click the link below to start the quiz:</p>
+        <a href="${quizLink}" target="_blank" class="btn btn-primary">Start ${subject} Quiz</a>
+      `;
+    }
+
+    function goBack() {
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>
