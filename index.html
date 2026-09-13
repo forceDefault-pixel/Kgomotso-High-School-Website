@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
@@ -15,227 +17,977 @@
       background-color: #f8f9fa;
       font-family: 'Arial', sans-serif;
     }
-    header { background-color: #ffc107; color: white; }
-    .navbar { background-color: #343a40; }
-    .navbar .nav-link, .navbar .navbar-brand { color: white; }
-    .navbar .nav-link:hover { color: #ffc107; }
-    .slogan { font-size: 28px; font-weight: bold; color: #f39c12; text-align: center; margin-top: 10px; animation: slideIn 2s ease-out; }
-    @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    footer { background-color: #343a40; color: white; text-align: center; padding: 10px; margin-top: 50px; }
-    .hero-section { text-align: center; padding: 60px 20px; background: white; border-radius: 10px; margin-top: 30px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-    .donation-section { text-align: center; margin-top: 40px; padding: 30px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-    .donation-btn { background-color: #28a745; color: white; font-size: 18px; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-    .donation-btn:hover { background-color: #218838; }
-    .social-icons a { margin: 0 10px; font-size: 20px; color: white; }
+
+    header {
+      background-color: #ffc107;
+      color: white;
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: white;
+    }
+
+    .navbar .nav-link:hover {
+      color: #ffc107;
+    }
+
+    .slogan {
+      font-size: 28px;
+      font-weight: bold;
+      color: #f39c12;
+      text-align: center;
+      margin-top: 10px;
+      animation: slideIn 2s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 50px;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .donation-section {
+      text-align: center;
+      margin-top: 40px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .donation-btn {
+      background-color: #28a745;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .donation-btn:hover {
+      background-color: #218838;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 20px;
+      color: white;
+    }
+
     /* Content Manager styling */
-    .content-section { margin-top: 40px; }
-    .content-card { margin-bottom: 20px; border-left: 5px solid #ffc107; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1); }
-    .content-card h5 { color: #343a40; }
-    .content-card small { color: #6c757d; }
+    .content-section {
+      margin-top: 40px;
+    }
+
+    .content-card {
+      margin-bottom: 20px;
+      border-left: 5px solid #ffc107;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-card h5 {
+      color: #343a40;
+    }
+
+    .content-card small {
+      color: #6c757d;
+    }
   </style>
 </head>
 
 <body>
+
   <!-- Top Header -->
   <header class="py-4 text-center">
+
     <div class="d-flex justify-content-center align-items-center">
-      <img src="kss logo.png" alt="KHS Logo" style="max-width: 120px; height: auto; margin-right: 15px" />
-      <h1 class="text-white">Kgomotso High School</h1>
+
+      <img
+        src="kss logo.png"
+        alt="KHS Logo"
+        style="max-width: 120px; height: auto; margin-right: 15px"
+      />
+
+      <h1 class="text-white">
+        Kgomotso High School
+      </h1>
+
     </div>
-    <div class="slogan">We Aim High</div>
+
+    <div class="slogan">
+      We Aim High
+    </div>
+
   </header>
+
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
+
     <div class="container">
-      <a class="navbar-brand" href="#">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+      <!-- CHANGED TO index.html -->
+      <a class="navbar-brand" href="index.html">
+        Home
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="Quiz.html">Quiz</a></li>
-          <li class="nav-item"><a class="nav-link" href="photos.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#footer-section">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="library.html">Library</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="ValuesDropdown" role="button" data-bs-toggle="dropdown">School values</a>
-            <ul class="dropdown-menu" aria-labelledby="ValuesDropdown">
-              <li><a class="dropdown-item" href="#">1.Servant-Leadership</a></li>
-              <li><a class="dropdown-item" href="#">2.Self-Discipline</a></li>
-              <li><a class="dropdown-item" href="#">3.Tolerance</a></li>
-              <li><a class="dropdown-item" href="#">4.Respect</a></li>
-              <li><a class="dropdown-item" href="#">5.Ubuntu</a></li>
-              <li><a class="dropdown-item" href="#">6.Excellence</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="EventsDropdown" role="button" data-bs-toggle="dropdown">Events</a>
-            <ul class="dropdown-menu" aria-labelledby="EventsDropdown">
-              <li><a class="dropdown-item" href="#">Sports Day</a></li>
-              <li><a class="dropdown-item" href="#">No Schoolbag Challenge</a></li>
-              <li><a class="dropdown-item" href="#">Ms KHS</a></li>
-              <li><a class="dropdown-item" href="https://www.facebook.com/reel/1224872192058359">Award Ceremony</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="virtual-lab.html">Virtual Lab</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        </ul>
+
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNav"
+      >
+
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-white fw-bold" href="adminlog.html"><i class="fas fa-user-gear me-1"></i> Admin Login</a></li>
+
+          <!-- CHANGED Quiz.html TO quiz.html -->
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html">
+              Quiz
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="photos.html">
+              Gallery
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#footer-section"
+            >
+              Contact
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="library.html"
+            >
+              Library
+            </a>
+          </li>
+
+
+          <!-- School Values -->
+          <li class="nav-item dropdown">
+
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="ValuesDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              School values
+            </a>
+
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="ValuesDropdown"
+            >
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  1. Servant-Leadership
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  2. Self-Discipline
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  3. Tolerance
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  4. Respect
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  5. Ubuntu
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  6. Excellence
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+
+         
+          <li class="nav-item dropdown">
+
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="EventsDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              Events
+            </a>
+
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="EventsDropdown"
+            >
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  Sports Day
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  No Schoolbag Challenge
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                >
+                  Ms KHS
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://www.facebook.com/reel/1224872192058359"
+                >
+                  Award Ceremony
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+
+          
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              href="virtual-lab.html"
+            >
+              Virtual Lab
+            </a>
+
+          </li>
+
+
+          <!-- About Us -->
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              href="about.html"
+            >
+              About Us
+            </a>
+
+          </li>
+
         </ul>
+
+
+       
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link text-white fw-bold"
+              href="adminlog.html"
+            >
+
+              <i class="fas fa-user-gear me-1"></i>
+
+              Admin Login
+
+            </a>
+
+          </li>
+
+        </ul>
+
       </div>
     </div>
+
   </nav>
+
 
   <!-- Hero Section -->
   <section class="container hero-section">
-    <h2>Welcome to Kgomotso High School</h2>
-    <p class="lead mt-3">The mighty giraffes aiming for top leafs.</p>
-    <a href="registration.html" class="btn btn-warning mt-4">Enroll Now</a>
+
+    <h2>
+      Welcome to Kgomotso High School
+    </h2>
+
+    <p class="lead mt-3">
+      The mighty giraffes aiming for top leafs.
+    </p>
+
+    <a
+      href="registration.html"
+      class="btn btn-warning mt-4"
+    >
+      Enroll Now
+    </a>
+
   </section>
+
 
   <!-- Dynamic Content Section -->
   <section class="container content-section">
-    <h3 class="mb-4 text-center">Latest Announcements</h3>
+
+    <h3 class="mb-4 text-center">
+      Latest Announcements
+    </h3>
+
     <div id="contentArea"></div>
+
   </section>
 
-  <!-- Check Acceptance Button -->
+
+
   <div class="mt-4 text-center">
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkModal">Check Acceptance</button>
+
+    <button
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#checkModal"
+    >
+      Check Acceptance
+    </button>
+
   </div>
 
-  <!-- Check Acceptance Modal -->
-  <div class="modal fade" id="checkModal" tabindex="-1">
+
+  <div
+    class="modal fade"
+    id="checkModal"
+    tabindex="-1"
+  >
+
     <div class="modal-dialog">
+
       <div class="modal-content">
-        <div class="modal-header"><h5 class="modal-title">Check Your Acceptance Status</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-        <div class="modal-body">
-          <form id="checkForm">
-            <div class="mb-3">
-              <label class="form-label">Enter Your Full Name or Email address:</label>
-              <input type="text" class="form-control" id="idNumber" required placeholder="Enter Your Full Name or Email address" />
-            </div>
-            <button type="submit" class="btn btn-success w-100 py-2 mt-3">Check Status</button>
-          </form>
-          <div id="result" class="mt-3"></div>
-          <div id="latestRegistration" class="mt-4"></div>
+
+        <div class="modal-header">
+
+          <h5 class="modal-title">
+            Check Your Acceptance Status
+          </h5>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+
         </div>
+
+
+        <div class="modal-body">
+
+          <form id="checkForm">
+
+            <div class="mb-3">
+
+              <label class="form-label">
+                Enter Your Full Name or Email address:
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="idNumber"
+                required
+                placeholder="Enter Your Full Name or Email address"
+              />
+
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-success w-100 py-2 mt-3"
+            >
+              Check Status
+            </button>
+
+          </form>
+
+
+          <div
+            id="result"
+            class="mt-3"
+          ></div>
+
+
+          <div
+            id="latestRegistration"
+            class="mt-4"
+          ></div>
+
+        </div>
+
       </div>
+
     </div>
+
   </div>
 
-  <!-- Donation Section -->
+
+  
   <section class="container donation-section">
-    <h3 class="mb-4">Support Us</h3>
-    <p>Your generous donation helps us continue providing quality education to our students.</p>
-    <a href="https://www.absa.co.za/personal/" class="donation-btn" target="_blank">Donate Now</a>
+
+    <h3 class="mb-4">
+      Support Us
+    </h3>
+
+    <p>
+      Your generous donation helps us continue providing quality education to our students.
+    </p>
+
+    <a
+      href="https://www.absa.co.za/personal/"
+      class="donation-btn"
+      target="_blank"
+    >
+      Donate Now
+    </a>
+
+
     <div class="mt-4">
-      <p><strong>Bank Details for Donations:</strong></p>
+
+      <p>
+        <strong>Bank Details for Donations:</strong>
+      </p>
+
       <ul>
-        <li><strong>Bank Name:</strong> ABSA</li>
-        <li><strong>Account Name:</strong> Kgomotso High School</li>
-        <li><strong>Account Number:</strong> 409 765 0375</li>
-        <li><strong>Branch Code:</strong> 632005</li>
+
+        <li>
+          <strong>Bank Name:</strong>
+          ABSA
+        </li>
+
+        <li>
+          <strong>Account Name:</strong>
+          Kgomotso High School
+        </li>
+
+        <li>
+          <strong>Account Number:</strong>
+          409 765 0375
+        </li>
+
+        <li>
+          <strong>Branch Code:</strong>
+          632005
+        </li>
+
       </ul>
-      <p>Or scan the QR code below to donate:</p>
-      <img src="QR code.png" alt="QR Code for Donation" class="img-fluid" style="max-width: 200px" />
+
+
+      <p>
+        Or scan the QR code below to donate:
+      </p>
+
+      <img
+        src="QR code.png"
+        alt="QR Code for Donation"
+        class="img-fluid"
+        style="max-width: 200px"
+      />
+
     </div>
+
   </section>
+
 
   <!-- Footer -->
   <footer id="footer-section">
+
     <div class="footer-section">
-      <h3>Contact Us</h3>
-      <p>Email: kgomotsoss@ncdoe.school.za</p>
-      <p>Phone: (083) 378 9086</p>
-      <p>Address: 2901 Mosegedi Street, Pampierstad, 8566, Northern Cape, South Africa</p>
+
+      <h3>
+        Contact Us
+      </h3>
+
+      <p>
+        Email: kgomotsoss@ncdoe.school.za
+      </p>
+
+      <p>
+        Phone: (083) 378 9086
+      </p>
+
+      <p>
+        Address: 2901 Mosegedi Street, Pampierstad, 8566, Northern Cape, South Africa
+      </p>
+
     </div>
+
+
     <div class="footer-section">
-      <h3>Follow Us</h3>
+
+      <h3>
+        Follow Us
+      </h3>
+
       <div class="social-icons">
-        <a href="https://web.facebook.com/kgomotsohighschoolofficial/"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.tiktok.com/@khschoir/video/7360244795987561734"><i class="fab fa-tiktok"></i></a>
-        <a href="https://x.com/kgomotsohighschoolofficial"><i class="fab fa-twitter"></i></a>
+
+        <a
+          href="https://web.facebook.com/kgomotsohighschoolofficial/"
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@khschoir/video/7360244795987561734"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a
+          href="https://x.com/kgomotsohighschoolofficial"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+
       </div>
+
     </div>
+
     &copy; 2025 Kgomotso High School. All rights reserved.
+
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+  
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+
+  
+  <script
+    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js">
+  </script>
+
+  <script
+    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js">
+  </script>
+
+  <script
+    src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js">
+  </script>
+
 
   <script>
+
     const firebaseConfig = {
-      apiKey: "AIzaSyBPv3s7SUwDvAIh0n9eEAQZBTdK6PWvkso",
-      authDomain: "khs-students.firebaseapp.com",
-      projectId: "khs-students",
-      storageBucket: "khs-students.firebasestorage.app",
-      messagingSenderId: "1084079144268",
-      appId: "1:1084079144268:web:386fda6e9ab76c0d4ca3e9",
-      measurementId: "G-F0F2FB9C0Y"
+
+      apiKey:
+        "AIzaSyBPv3s7SUwDvAIh0n9eEAQZBTdK6PWvkso",
+
+      authDomain:
+        "khs-students.firebaseapp.com",
+
+      projectId:
+        "khs-students",
+
+      storageBucket:
+        "khs-students.firebasestorage.app",
+
+      messagingSenderId:
+        "1084079144268",
+
+      appId:
+        "1:1084079144268:web:386fda6e9ab76c0d4ca3e9",
+
+      measurementId:
+        "G-F0F2FB9C0Y"
+
     };
 
+
     firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
 
-    // ✅ Load Content Manager posts
-    const contentArea = document.getElementById('contentArea');
-    db.ref('content').on('value', snapshot => {
-      contentArea.innerHTML = '';
-      const data = snapshot.val();
-      if (data) {
-        Object.values(data).reverse().forEach(post => {
-          const div = document.createElement('div');
-          div.className = 'content-card';
-          div.innerHTML = `
-            <h5>${post.title}</h5>
-            <p>${post.body}</p>
-            <small><i class="fas fa-calendar"></i> ${post.date || "Unknown date"}</small>
-          `;
-          contentArea.appendChild(div);
-        });
-      } else {
-        contentArea.innerHTML = `<div class="alert alert-info">No announcements yet.</div>`;
-      }
-    });
+    const db =
+      firebase.database();
 
-    // ✅ Acceptance Checker
-    document.getElementById('checkForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const input = document.getElementById('idNumber').value.trim().toLowerCase();
-      const resultDiv = document.getElementById('result');
-      const latestRegistrationDiv = document.getElementById('latestRegistration');
 
-      resultDiv.innerHTML = 'Checking...';
-      latestRegistrationDiv.innerHTML = '';
+    // -----------------------------
+    // Load Content Manager Posts
+    // -----------------------------
 
-      db.ref('acceptances').once('value').then(snapshot => {
-        const data = snapshot.val();
-        if (!data) { resultDiv.innerHTML = '<div class="alert alert-danger">No acceptance data found.</div>'; return; }
-        const records = Object.values(data);
-        const found = records.find(rec => (rec.id && rec.id.toLowerCase() === input) || (rec.name && rec.name.toLowerCase() === input));
-        if (found) {
-          if (found.accepted === "yes") resultDiv.innerHTML = `<div class="alert alert-success">Congratulations, you have been accepted!</div>`;
-          else if (found.accepted === "no") resultDiv.innerHTML = `<div class="alert alert-warning">Sorry, you have not been accepted.</div>`;
-          else resultDiv.innerHTML = `<div class="alert alert-info">Your acceptance status is pending.</div>`;
+    const contentArea =
+      document.getElementById(
+        'contentArea'
+      );
+
+
+    db.ref('content').on(
+      'value',
+      snapshot => {
+
+        contentArea.innerHTML = '';
+
+        const data =
+          snapshot.val();
+
+
+        if (data) {
+
+          Object
+            .values(data)
+            .reverse()
+            .forEach(post => {
+
+              const div =
+                document.createElement(
+                  'div'
+                );
+
+
+              div.className =
+                'content-card';
+
+
+              div.innerHTML = `
+
+                <h5>
+                  ${post.title}
+                </h5>
+
+                <p>
+                  ${post.body}
+                </p>
+
+                <small>
+                  <i class="fas fa-calendar"></i>
+                  ${post.date || "Unknown date"}
+                </small>
+
+              `;
+
+
+              contentArea.appendChild(
+                div
+              );
+
+            });
+
         } else {
-          resultDiv.innerHTML = `<div class="alert alert-danger">No record found for "${input}". Please check your spelling.</div>`;
+
+          contentArea.innerHTML = `
+
+            <div class="alert alert-info">
+              No announcements yet.
+            </div>
+
+          `;
+
         }
-        db.ref('registration').orderByChild('timestamp').limitToLast(1).once('value').then(regSnap => {
-          if (regSnap.exists()) {
-            const latest = Object.values(regSnap.val())[0];
-            latestRegistrationDiv.innerHTML = `<p><strong>Latest Registration:</strong> ${latest.name} from ${latest.area} area, Phone: ${latest.phone}</p>`;
-          }
-        });
-      }).catch(err => {
-        resultDiv.innerHTML = `<div class="alert alert-danger">Error checking status: ${err.message}</div>`;
-      });
-    });
+
+      }
+    );
+
+
+    
+    document
+      .getElementById(
+        'checkForm'
+      )
+      .addEventListener(
+        'submit',
+        function (e) {
+
+          e.preventDefault();
+
+
+          const input =
+            document
+              .getElementById(
+                'idNumber'
+              )
+              .value
+              .trim()
+              .toLowerCase();
+
+
+          const resultDiv =
+            document.getElementById(
+              'result'
+            );
+
+
+          const latestRegistrationDiv =
+            document.getElementById(
+              'latestRegistration'
+            );
+
+
+          resultDiv.innerHTML =
+            'Checking...';
+
+
+          latestRegistrationDiv.innerHTML =
+            '';
+
+
+          db.ref('acceptances')
+            .once('value')
+            .then(snapshot => {
+
+              const data =
+                snapshot.val();
+
+
+              if (!data) {
+
+                resultDiv.innerHTML = `
+
+                  <div class="alert alert-danger">
+                    No acceptance data found.
+                  </div>
+
+                `;
+
+                return;
+
+              }
+
+
+              const records =
+                Object.values(data);
+
+
+              const found =
+                records.find(
+                  rec =>
+
+                    (
+                      rec.id &&
+                      rec.id
+                        .toLowerCase() ===
+                      input
+                    )
+
+                    ||
+
+                    (
+                      rec.name &&
+                      rec.name
+                        .toLowerCase() ===
+                      input
+                    )
+                );
+
+
+              if (found) {
+
+                if (
+                  found.accepted ===
+                  "yes"
+                ) {
+
+                  resultDiv.innerHTML = `
+
+                    <div class="alert alert-success">
+                      Congratulations, you have been accepted!
+                    </div>
+
+                  `;
+
+                }
+
+                else if (
+                  found.accepted ===
+                  "no"
+                ) {
+
+                  resultDiv.innerHTML = `
+
+                    <div class="alert alert-warning">
+                      Sorry, you have not been accepted.
+                    </div>
+
+                  `;
+
+                }
+
+                else {
+
+                  resultDiv.innerHTML = `
+
+                    <div class="alert alert-info">
+                      Your acceptance status is pending.
+                    </div>
+
+                  `;
+
+                }
+
+              }
+
+              else {
+
+                resultDiv.innerHTML = `
+
+                  <div class="alert alert-danger">
+                    No record found for "${input}".
+                    Please check your spelling.
+                  </div>
+
+                `;
+
+              }
+
+
+              db.ref('registration')
+                .orderByChild('timestamp')
+                .limitToLast(1)
+                .once('value')
+                .then(regSnap => {
+
+                  if (regSnap.exists()) {
+
+                    const latest =
+                      Object.values(
+                        regSnap.val()
+                      )[0];
+
+
+                    latestRegistrationDiv.innerHTML = `
+
+                      <p>
+
+                        <strong>
+                          Latest Registration:
+                        </strong>
+
+                        ${latest.name}
+                        from
+                        ${latest.area}
+                        area,
+
+                        Phone:
+                        ${latest.phone}
+
+                      </p>
+
+                    `;
+
+                  }
+
+                });
+
+            })
+
+            .catch(err => {
+
+              resultDiv.innerHTML = `
+
+                <div class="alert alert-danger">
+                  Error checking status:
+                  ${err.message}
+                </div>
+
+              `;
+
+            });
+
+        }
+      );
+
   </script>
+
 </body>
 </html>
+
