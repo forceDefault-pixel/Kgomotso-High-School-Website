@@ -1,5 +1,4 @@
-
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kgomotso High School Enrollment</title>
 
-  <!-- Bootstrap -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for icons -->
+
+ 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- jsPDF -->
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
@@ -22,7 +23,11 @@
       position: relative;
       min-height: 100vh;
     }
-    .hidden { display: none; }
+
+    .hidden {
+      display: none;
+    }
+
     .form-container {
       max-width: 500px;
       margin: 50px auto;
@@ -33,6 +38,7 @@
       position: relative;
       z-index: 2;
     }
+
     footer {
       background-color: #343a40;
       color: white;
@@ -40,9 +46,21 @@
       padding: 10px;
       margin-top: 50px;
     }
-    .progress { height: 25px; }
-    .btn-black { background-color: #000; color: white; }
-    .btn-black:hover { background-color: #333; color: white; }
+
+    .progress {
+      height: 25px;
+    }
+
+    .btn-black {
+      background-color: #000;
+      color: white;
+    }
+
+    .btn-black:hover {
+      background-color: #333;
+      color: white;
+    }
+
     .bubble {
       position: absolute;
       border-radius: 50%;
@@ -53,11 +71,21 @@
       animation: floatBubble 10s ease-in-out infinite;
       z-index: 1;
     }
+
     @keyframes floatBubble {
-      0% { transform: translate(0, 0); }
-      50% { transform: translate(50px, -50px); }
-      100% { transform: translate(0, 0); }
+      0% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(50px, -50px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
     }
+
     .slogan {
       font-size: 30px;
       font-weight: bold;
@@ -65,10 +93,19 @@
       text-align: center;
       animation: slideIn 2s ease-out;
     }
+
     @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
+
     .back-home-link {
       display: inline-block;
       background-color: #343a40;
@@ -78,6 +115,7 @@
       border-radius: 5px;
       transition: color 0.3s, background-color 0.3s;
     }
+
     .back-home-link:hover {
       color: #ffc107;
       text-decoration: none;
@@ -87,14 +125,14 @@
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
-  
+
   <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      apiKey: "Iactuallystruggledgettingthose",
+      authDomain: "firebaseGaveMeFire",
       databaseURL: "https://kgomotso-high-school-c1ac9-default-rtdb.firebaseio.com/",
-      projectId: "YOUR_PROJECT_ID",
+      projectId: "ImmaLookForThemAndFixThis",
       storageBucket: "YOUR_PROJECT_ID.appspot.com",
       messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
       appId: "YOUR_APP_ID"
@@ -110,246 +148,947 @@
 <body>
 
 <header class="bg-warning text-center py-3 mb-4">
+
   <div class="d-flex justify-content-center align-items-center">
-    <img src="kss logo.png" alt="Kgomotso High School Logo" style="max-width: 120px; height: auto; margin-right: 15px;">
-    <h1 class="text-white">Kgomotso High School</h1>
+
+    <img
+      src="kss logo.png"
+      alt="Kgomotso High School Logo"
+      style="max-width: 120px; height: auto; margin-right: 15px;"
+    >
+
+    <h1 class="text-white">
+      Kgomotso High School
+    </h1>
+
   </div>
-  <div class="slogan">We Aim High</div>
+
+  <div class="slogan">
+    We Aim High
+  </div>
+
 </header>
 
+
 <!-- Floating bubbles -->
-<div class="bubble" style="top: 20%; left: 5%;">📚</div>
-<div class="bubble" style="top: 60%; left: 15%;">✏️</div>
-<div class="bubble" style="top: 40%; left: 80%;">📖</div>
-<div class="bubble" style="top: 70%; left: 60%;">📝</div>
-<div class="bubble" style="top: 10%; left: 90%;">🧑‍🏫</div>
+
+<div class="bubble" style="top: 20%; left: 5%;">
+  📚
+</div>
+
+<div class="bubble" style="top: 60%; left: 15%;">
+  ✏️
+</div>
+
+<div class="bubble" style="top: 40%; left: 80%;">
+  📖
+</div>
+
+<div class="bubble" style="top: 70%; left: 60%;">
+  📝
+</div>
+
+<div class="bubble" style="top: 10%; left: 90%;">
+  🧑‍🏫
+</div>
+
 
 <div class="container">
+
   <!-- Progress Bar -->
+
   <div class="progress mb-4">
-    <div id="progressBar" class="progress-bar bg-black" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+
+    <div
+      id="progressBar"
+      class="progress-bar bg-black"
+      role="progressbar"
+      style="width: 33%;"
+      aria-valuenow="33"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
       Step 1: Login/Register
     </div>
+
   </div>
+
 
   <!-- Login/Register Section -->
-  <div id="authSection" class="form-container">
-    <h2 class="text-center mb-3">Login or Register</h2>
 
-    <ul class="nav nav-tabs mb-4" id="authTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+  <div
+    id="authSection"
+    class="form-container"
+  >
+
+    <h2 class="text-center mb-3">
+      Login or Register
+    </h2>
+
+
+    <ul
+      class="nav nav-tabs mb-4"
+      id="authTab"
+      role="tablist"
+    >
+
+      <li
+        class="nav-item"
+        role="presentation"
+      >
+
+        <button
+          class="nav-link active"
+          id="login-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#login"
+          type="button"
+          role="tab"
+        >
+          Login
+        </button>
+
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Register</button>
+
+
+      <li
+        class="nav-item"
+        role="presentation"
+      >
+
+        <button
+          class="nav-link"
+          id="register-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#register"
+          type="button"
+          role="tab"
+        >
+          Register
+        </button>
+
       </li>
+
     </ul>
 
+
     <div class="tab-content">
+
+
       <!-- Login Form -->
-      <div class="tab-pane fade show active" id="login" role="tabpanel">
-        <form id="loginForm" novalidate>
+
+      <div
+        class="tab-pane fade show active"
+        id="login"
+        role="tabpanel"
+      >
+
+        <form
+          id="loginForm"
+          novalidate
+        >
+
           <div class="mb-3">
-            <label>Email address</label>
-            <input type="email" class="form-control" id="loginEmail" required>
+
+            <label>
+              Email address
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              id="loginEmail"
+              required
+            >
+
           </div>
+
+
           <div class="mb-3">
-            <label>Password</label>
-            <input type="password" class="form-control" id="loginPassword" required>
+
+            <label>
+              Password
+            </label>
+
+            <input
+              type="password"
+              class="form-control"
+              id="loginPassword"
+              required
+            >
+
           </div>
-          <button class="btn btn-black w-100" type="submit">Login</button>
+
+
+          <button
+            class="btn btn-black w-100"
+            type="submit"
+          >
+            Login
+          </button>
+
         </form>
+
       </div>
+
 
       <!-- Back to Home Link -->
+
       <div class="text-center my-4">
-        <a href="home.html" class="back-home-link">
-          <i class="fas fa-arrow-left"></i> Back to Home
+
+        <!-- CHANGED FROM home.html TO index.html -->
+
+        <a
+          href="index.html"
+          class="back-home-link"
+        >
+          <i class="fas fa-arrow-left"></i>
+          Back to Home
         </a>
+
       </div>
+
 
       <!-- Register Form -->
-      <div class="tab-pane fade" id="register" role="tabpanel">
-        <form id="registerForm" novalidate>
+
+      <div
+        class="tab-pane fade"
+        id="register"
+        role="tabpanel"
+      >
+
+        <form
+          id="registerForm"
+          novalidate
+        >
+
           <div class="mb-3">
-            <label>Full Name</label>
-            <input type="text" class="form-control" id="registerName" required>
+
+            <label>
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="registerName"
+              required
+            >
+
           </div>
+
+
           <div class="mb-3">
-            <label>Email address</label>
-            <input type="email" class="form-control" id="registerEmail" required>
+
+            <label>
+              Email address
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              id="registerEmail"
+              required
+            >
+
           </div>
+
+
           <div class="mb-3">
-            <label>Password</label>
-            <input type="password" class="form-control" id="registerPassword" required>
+
+            <label>
+              Password
+            </label>
+
+            <input
+              type="password"
+              class="form-control"
+              id="registerPassword"
+              required
+            >
+
           </div>
-          <button class="btn btn-black w-100" type="submit">Register</button>
+
+
+          <button
+            class="btn btn-black w-100"
+            type="submit"
+          >
+            Register
+          </button>
+
         </form>
+
       </div>
+
     </div>
+
   </div>
+
 
   <!-- Application Form Section -->
-  <div id="applicationSection" class="form-container hidden">
-    <h2 class="text-center mb-3">Enrollment Application Form</h2>
-    <form id="applicationForm" novalidate>
+
+  <div
+    id="applicationSection"
+    class="form-container hidden"
+  >
+
+    <h2 class="text-center mb-3">
+      Enrollment Application Form
+    </h2>
+
+
+    <form
+      id="applicationForm"
+      novalidate
+    >
+
       <div class="mb-3">
-        <label>Full Name</label>
-        <input type="text" class="form-control" id="fullName" required>
+
+        <label>
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="fullName"
+          required
+        >
+
       </div>
+
+
       <div class="mb-3">
-        <label>Date of Birth</label>
-        <input type="date" class="form-control" id="dob" required>
+
+        <label>
+          Date of Birth
+        </label>
+
+        <input
+          type="date"
+          class="form-control"
+          id="dob"
+          required
+        >
+
       </div>
+
+
       <div class="mb-3">
-        <label>Select Grade</label>
-        <select class="form-select" id="program" onchange="updateSubjects()" required>
-          <option value="">Choose...</option>
-          <option value="Grade 8">Grade 8</option>
-          <option value="Grade 9">Grade 9</option>
-          <option value="Grade 10">Grade 10</option>
-          <option value="Grade 11">Grade 11</option>
-          <option value="Grade 12">Grade 12</option>
+
+        <label>
+          Select Grade
+        </label>
+
+        <select
+          class="form-select"
+          id="program"
+          onchange="updateSubjects()"
+          required
+        >
+
+          <option value="">
+            Choose...
+          </option>
+
+          <option value="Grade 8">
+            Grade 8
+          </option>
+
+          <option value="Grade 9">
+            Grade 9
+          </option>
+
+          <option value="Grade 10">
+            Grade 10
+          </option>
+
+          <option value="Grade 11">
+            Grade 11
+          </option>
+
+          <option value="Grade 12">
+            Grade 12
+          </option>
+
         </select>
+
       </div>
 
-      <div class="mb-3" id="subjectSection" style="display: none;">
-        <label>Select Subjects</label>
-        <div id="subjects" class="form-check"></div>
-        <small class="text-muted">Max 7 subjects for Grade 8-9, 4 for Grade 10-12.</small>
+
+      <div
+        class="mb-3"
+        id="subjectSection"
+        style="display: none;"
+      >
+
+        <label>
+          Select Subjects
+        </label>
+
+        <div
+          id="subjects"
+          class="form-check"
+        ></div>
+
+        <small class="text-muted">
+          Max 7 subjects for Grade 8-9, 4 for Grade 10-12.
+        </small>
+
       </div>
 
+
       <div class="mb-3">
-        <label>Upload Report Card</label>
-        <input type="file" class="form-control" id="reportCard" accept=".pdf,.jpg,.jpeg,.png" required>
-      </div>
-      <div class="mb-3">
-        <label>Upload ID Document</label>
-        <input type="file" class="form-control" id="idDocument" accept=".pdf,.jpg,.jpeg,.png" required>
-      </div>
-      <div class="mb-3">
-        <label>Upload Proof of Residence</label>
-        <input type="file" class="form-control" id="proofOfResidence" accept=".pdf,.jpg,.jpeg,.png" required>
+
+        <label>
+          Upload Report Card
+        </label>
+
+        <input
+          type="file"
+          class="form-control"
+          id="reportCard"
+          accept=".pdf,.jpg,.jpeg,.png"
+          required
+        >
+
       </div>
 
-      <button class="btn btn-warning w-100" type="submit">Submit Application</button>
+
+      <div class="mb-3">
+
+        <label>
+          Upload ID Document
+        </label>
+
+        <input
+          type="file"
+          class="form-control"
+          id="idDocument"
+          accept=".pdf,.jpg,.jpeg,.png"
+          required
+        >
+
+      </div>
+
+
+      <div class="mb-3">
+
+        <label>
+          Upload Proof of Residence
+        </label>
+
+        <input
+          type="file"
+          class="form-control"
+          id="proofOfResidence"
+          accept=".pdf,.jpg,.jpeg,.png"
+          required
+        >
+
+      </div>
+
+
+      <button
+        class="btn btn-warning w-100"
+        type="submit"
+      >
+        Submit Application
+      </button>
+
     </form>
+
   </div>
+
 
   <!-- Confirmation -->
-  <div id="confirmationSection" class="form-container hidden text-center">
-    <h2>Application Submitted!</h2>
-    <p>Thank you for applying to <strong>Kgomotso High School</strong>.</p>
-    <p>Your Application Receipt has been downloaded.</p>
-    <button onclick="goBack()" class="btn btn-dark mt-3">Go Back to Home</button>
+
+  <div
+    id="confirmationSection"
+    class="form-container hidden text-center"
+  >
+
+    <h2>
+      Application Submitted!
+    </h2>
+
+    <p>
+      Thank you for applying to
+      <strong>Kgomotso High School</strong>.
+    </p>
+
+    <p>
+      Your Application Receipt has been downloaded.
+    </p>
+
+    <button
+      onclick="goBack()"
+      class="btn btn-dark mt-3"
+    >
+      Go Back to Home
+    </button>
+
   </div>
+
 </div>
+
 
 <footer>
   &copy; 2025 Kgomotso High School. All rights reserved.
 </footer>
 
+
 <!-- Bootstrap JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
 <script>
+
   const { jsPDF } = window.jspdf;
 
+
   function updateSubjects() {
-    const grade = document.getElementById('program').value;
-    const subjectsDiv = document.getElementById('subjects');
-    const subjectSection = document.getElementById('subjectSection');
+
+    const grade =
+      document.getElementById(
+        'program'
+      ).value;
+
+
+    const subjectsDiv =
+      document.getElementById(
+        'subjects'
+      );
+
+
+    const subjectSection =
+      document.getElementById(
+        'subjectSection'
+      );
+
+
     subjectsDiv.innerHTML = '';
 
+
     const subjects = {
-      "Grade 8": ["Mathematics", "English", "Social Sciences", "Life Orientation", "Setswana", "Technology", "Economic Management Sciences"],
-      "Grade 9": ["Mathematics", "English", "Social Sciences", "Life Orientation", "Setswana", "Technology", "Economic Management Sciences"],
-      "Grade 10": ["Agricultural sciences" ,"Mathematics", "Physical Science", "Life Sciences", "Geography", "History", "Business Studies", "Mathematical Literacy", "Tourism"],
-      "Grade 11": ["Agricultural sciences" ,"Mathematics", "Physical Science", "Life Sciences", "Geography", "History", "Business Studies", "Mathematical Literacy", "Tourism"],
-      "Grade 12": ["Agricultural sciences" ,"Mathematics", "Physical Science", "Life Sciences", "Geography", "History", "Business Studies", "Mathematical Literacy", "Tourism"],
+
+      "Grade 8": [
+        "Mathematics",
+        "English",
+        "Social Sciences",
+        "Life Orientation",
+        "Setswana",
+        "Technology",
+        "Economic Management Sciences"
+      ],
+
+      "Grade 9": [
+        "Mathematics",
+        "English",
+        "Social Sciences",
+        "Life Orientation",
+        "Setswana",
+        "Technology",
+        "Economic Management Sciences"
+      ],
+
+      "Grade 10": [
+        "Agricultural sciences",
+        "Mathematics",
+        "Physical Science",
+        "Life Sciences",
+        "Geography",
+        "History",
+        "Business Studies",
+        "Mathematical Literacy",
+        "Tourism"
+      ],
+
+      "Grade 11": [
+        "Agricultural sciences",
+        "Mathematics",
+        "Physical Science",
+        "Life Sciences",
+        "Geography",
+        "History",
+        "Business Studies",
+        "Mathematical Literacy",
+        "Tourism"
+      ],
+
+      "Grade 12": [
+        "Agricultural sciences",
+        "Mathematics",
+        "Physical Science",
+        "Life Sciences",
+        "Geography",
+        "History",
+        "Business Studies",
+        "Mathematical Literacy",
+        "Tourism"
+      ]
+
     };
 
+
     if (subjects[grade]) {
-      subjects[grade].forEach((subject, index) => {
-        subjectsDiv.innerHTML += `
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="subject${index}" value="${subject}">
-            <label class="form-check-label" for="subject${index}">${subject}</label>
-          </div>
-        `;
-      });
-      subjectSection.style.display = 'block';
-    } else {
-      subjectSection.style.display = 'none';
+
+      subjects[grade].forEach(
+        (subject, index) => {
+
+          subjectsDiv.innerHTML += `
+
+            <div class="form-check">
+
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="subject${index}"
+                value="${subject}"
+              >
+
+              <label
+                class="form-check-label"
+                for="subject${index}"
+              >
+                ${subject}
+              </label>
+
+            </div>
+
+          `;
+
+        }
+      );
+
+
+      subjectSection.style.display =
+        'block';
+
     }
+
+    else {
+
+      subjectSection.style.display =
+        'none';
+
+    }
+
   }
+
 
   function moveToApplication() {
-    document.getElementById('authSection').classList.add('hidden');
-    document.getElementById('applicationSection').classList.remove('hidden');
-    updateProgressBar(66, 'Step 2: Enrollment Form');
+
+    document
+      .getElementById(
+        'authSection'
+      )
+      .classList.add(
+        'hidden'
+      );
+
+
+    document
+      .getElementById(
+        'applicationSection'
+      )
+      .classList.remove(
+        'hidden'
+      );
+
+
+    updateProgressBar(
+      66,
+      'Step 2: Enrollment Form'
+    );
+
   }
 
-  // ✅ This function is now updated to redirect to home.html
+
+ 
+
   function goBack() {
-    window.location.href = "home.html";
+
+    window.location.href =
+      "index.html";
+
   }
 
-  function updateProgressBar(percent, text) {
-    const bar = document.getElementById('progressBar');
-    bar.style.width = percent + '%';
-    bar.setAttribute('aria-valuenow', percent);
-    bar.innerText = text;
+
+  function updateProgressBar(
+    percent,
+    text
+  ) {
+
+    const bar =
+      document.getElementById(
+        'progressBar'
+      );
+
+
+    bar.style.width =
+      percent + '%';
+
+
+    bar.setAttribute(
+      'aria-valuenow',
+      percent
+    );
+
+
+    bar.innerText =
+      text;
+
   }
 
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        return;
-      }
 
-      if (form.id === 'loginForm' || form.id === 'registerForm') {
-        moveToApplication();
-      } else if (form.id === 'applicationForm') {
-        generatePDF();
+  document
+    .querySelectorAll('form')
+    .forEach(
+      form => {
+
+        form.addEventListener(
+          'submit',
+          function (e) {
+
+            e.preventDefault();
+
+
+            if (!form.checkValidity()) {
+
+              form.classList.add(
+                'was-validated'
+              );
+
+              return;
+
+            }
+
+
+            if (
+              form.id === 'loginForm' ||
+              form.id === 'registerForm'
+            ) {
+
+              moveToApplication();
+
+            }
+
+            else if (
+              form.id === 'applicationForm'
+            ) {
+
+              generatePDF();
+
+            }
+
+          }
+        );
+
       }
-    });
-  });
+    );
+
 
   function generatePDF() {
-    const doc = new jsPDF();
-    const appID = "KH" + Date.now().toString().slice(-6);
-    const name = document.getElementById('fullName').value;
-    const dob = document.getElementById('dob').value;
-    const grade = document.getElementById('program').value;
-    const subjects = Array.from(document.querySelectorAll('#subjects input:checked')).map(cb => cb.value).join(', ');
-    const date = new Date().toLocaleDateString();
 
-    const reportCard = document.getElementById('reportCard').files[0]?.name || 'Not uploaded';
-    const idDocument = document.getElementById('idDocument').files[0]?.name || 'Not uploaded';
-    const proofOfResidence = document.getElementById('proofOfResidence').files[0]?.name || 'Not uploaded';
+    const doc =
+      new jsPDF();
 
-    doc.text(`Application Receipt`, 20, 20);
-    doc.text(`Application ID: ${appID}`, 20, 30);
-    doc.text(`Full Name: ${name}`, 20, 40);
-    doc.text(`Date of Birth: ${dob}`, 20, 50);
-    doc.text(`Grade: ${grade}`, 20, 60);
-    doc.text(`Subjects: ${subjects}`, 20, 70);
-    doc.text(`Submitted On: ${date}`, 20, 80);
-    doc.text(``, 20, 90);
-    doc.text(`Documents Uploaded:`, 20, 100);
-    doc.text(`- Report Card: ${reportCard}`, 20, 110);
-    doc.text(`- ID Document: ${idDocument}`, 20, 120);
-    doc.text(`- Proof of Residence: ${proofOfResidence}`, 20, 130);
 
-    doc.save(`${appID}_Receipt.pdf`);
+    const appID =
+      "KH" +
+      Date.now()
+        .toString()
+        .slice(-6);
 
-    document.getElementById('applicationSection').classList.add('hidden');
-    document.getElementById('confirmationSection').classList.remove('hidden');
-    updateProgressBar(100, 'Completed!');
+
+    const name =
+      document
+        .getElementById(
+          'fullName'
+        )
+        .value;
+
+
+    const dob =
+      document
+        .getElementById(
+          'dob'
+        )
+        .value;
+
+
+    const grade =
+      document
+        .getElementById(
+          'program'
+        )
+        .value;
+
+
+    const subjects =
+      Array.from(
+        document.querySelectorAll(
+          '#subjects input:checked'
+        )
+      )
+      .map(
+        cb => cb.value
+      )
+      .join(', ');
+
+
+    const date =
+      new Date()
+        .toLocaleDateString();
+
+
+    const reportCard =
+      document
+        .getElementById(
+          'reportCard'
+        )
+        .files[0]
+        ?.name ||
+      'Not uploaded';
+
+
+    const idDocument =
+      document
+        .getElementById(
+          'idDocument'
+        )
+        .files[0]
+        ?.name ||
+      'Not uploaded';
+
+
+    const proofOfResidence =
+      document
+        .getElementById(
+          'proofOfResidence'
+        )
+        .files[0]
+        ?.name ||
+      'Not uploaded';
+
+
+    doc.text(
+      `Application Receipt`,
+      20,
+      20
+    );
+
+
+    doc.text(
+      `Application ID: ${appID}`,
+      20,
+      30
+    );
+
+
+    doc.text(
+      `Full Name: ${name}`,
+      20,
+      40
+    );
+
+
+    doc.text(
+      `Date of Birth: ${dob}`,
+      20,
+      50
+    );
+
+
+    doc.text(
+      `Grade: ${grade}`,
+      20,
+      60
+    );
+
+
+    doc.text(
+      `Subjects: ${subjects}`,
+      20,
+      70
+    );
+
+
+    doc.text(
+      `Submitted On: ${date}`,
+      20,
+      80
+    );
+
+
+    doc.text(
+      ``,
+      20,
+      90
+    );
+
+
+    doc.text(
+      `Documents Uploaded:`,
+      20,
+      100
+    );
+
+
+    doc.text(
+      `- Report Card: ${reportCard}`,
+      20,
+      110
+    );
+
+
+    doc.text(
+      `- ID Document: ${idDocument}`,
+      20,
+      120
+    );
+
+
+    doc.text(
+      `- Proof of Residence: ${proofOfResidence}`,
+      20,
+      130
+    );
+
+
+    doc.save(
+      `${appID}_Receipt.pdf`
+    );
+
+
+    document
+      .getElementById(
+        'applicationSection'
+      )
+      .classList.add(
+        'hidden'
+      );
+
+
+    document
+      .getElementById(
+        'confirmationSection'
+      )
+      .classList.remove(
+        'hidden'
+      );
+
+
+    updateProgressBar(
+      100,
+      'Completed!'
+    );
+
   }
+
 </script>
 
 </body>
